@@ -1,3 +1,9 @@
+### 前置说明
+1. /doc 文件夹中包含项目截图和以下将要描述的文档。
+2. weather-web 项目： 天气Web服务。 
+3. weather-weixin 项目：查询天气小程序（展示如何使用该服务）。
+4. 欢迎 fork 和 star ~
+
 天气服务说明文档
 ====
 # 1背景
@@ -10,7 +16,7 @@
 >1. 依赖第三方网站，第三方网站的网页结构变化后需要重新修改代码。
 >2. 第三方服务器崩溃或者提供反爬技术的话，该服务失效。
 ## 1.3 声明
-本服务只是为了学习交流使用。
+&emsp;&emsp;本服务只是为了学习交流使用。
 # 2服务结构
 &emsp;&emsp;如果开发者需要基于该服务项目进行开发的话，需要了解该服务的一些结构。该服务（weather-web项目）的总体结构如图1.1所示。<br>
 ![](/doc/imgs/frame.png "服务总体结构")<br>
@@ -22,8 +28,8 @@
 为了服务的快速，服务所有数据都在内存中，并没有落盘。
 # 3服务接口
 ## 3.1访问接口
-&emsp;&emsp;访问接口如表3.1所示，黄色部分表示需要提供的参数。开发者在部署后，最终的访问接口是：协议（http 或 https）+ 主机地址 + 接口。<br>
-表 3.1天气查询服务接口<br>
+&emsp;&emsp;天气查询服务接口如下表所示，黄色部分表示需要提供的参数。开发者在部署后，最终的访问接口是：协议（http 或 https）+ 主机地址 + 接口。<br>
+<br>
 
 | 功能        | 接口          | 
 | ------------- |:-------------:| 
@@ -56,6 +62,9 @@
 >2. 按中文查询：
 >3. 按拼音查询：
 # 4基于该服务的小程序
-&emsp;&emsp;基于该服务可以构建一些天气查询应用。图4.1就是小程序项目（weather-weixin）的演示效果图。（由于证书没整好，目前该小程序没有发布）。<br>
-![](/doc/imgs/1.png "服务总体结构")![](/doc/imgs/2.png "服务总体结构")![](/doc/imgs/3.png "服务总体结构")<br>
-图4.1 基于天气服务的查询天气小程序
+&emsp;&emsp;基于该服务可以构建一些天气查询应用。下面几幅图就是小程序项目（weather-weixin）的演示效果图。（由于证书没整好，目前该小程序只能在iPhone上运行）。<br>
+<p align="center">
+<img src="https://github.com/mindawei/weather/blob/master/doc/imgs/1.png" width="33%" height="33%" />
+<img src="https://github.com/mindawei/weather/blob/master/doc/imgs/2.png" width="33%" height="33%" />
+<img src="https://github.com/mindawei/weather/blob/master/doc/imgs/3.png" width="33%" height="33%" />
+</p>
