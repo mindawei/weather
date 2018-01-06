@@ -5,7 +5,8 @@
 
 ![查询天气小程序](https://github.com/mindawei/weather/blob/master/doc/imgs/weahter-weixin.jpg)
 
-4. 欢迎 fork 和 star ~
+4. 项目中一些关键Key已经去除，开发者可以自行添加，如有问题可以留言或者邮件联系。
+5. 欢迎 fork 和 star ~
 
 天气服务说明文档
 ====

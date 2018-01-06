@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view>
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">请输入要查询的城市</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="finishInput">查找</view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">{{weatherData.queryName}}30天天气</view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <view  class="weui-cell" wx:for="{{weatherData.weatherItems}}">
+      <view class="weui-cell__hd">
+        {{item.date}} {{item.dayKind}}
+      </view>
+
+      <view class="weui-cell__bd">
+        <image src="{{baseImgPath+item.weatherImg}}" style="margin-left:40px;margin-right:5px;vertical-align: middle;width:20px;height:20px;" /> {{item.weather}}
+      </view>
+
+      <view class="weui-cell__ft">{{item.minTemperature}}~{{item.maxTemperature}} ℃ </view>
+    </view>
+  </view>
+
+  <view  class="weui-footer">
+    <view class="weui-footer__text">数据来自天气网</view>
+  </view>
+
+
+</view>
