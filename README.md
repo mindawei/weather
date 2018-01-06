@@ -1,7 +1,10 @@
 ### 前置说明
 1. /doc 文件夹中包含项目截图和以下将要描述的文档。
 2. weather-web 项目： 天气Web服务。 
-3. weather-weixin 项目：查询天气小程序（展示如何使用该服务）。
+3. weather-weixin 项目：查询天气微信小程序（微信扫描下图可以查看）。
+
+![查询天气小程序](https://github.com/mindawei/weather/blob/master/doc/imgs/weahter-weixin.jpg)
+
 4. 欢迎 fork 和 star ~
 
 天气服务说明文档
@@ -30,7 +33,7 @@
 为了服务的快速，服务所有数据都在内存中，并没有落盘。
 # 3服务接口
 ## 3.1访问接口
-&emsp;&emsp;天气查询服务接口如下表所示，黄色部分表示需要提供的参数。开发者在部署后，最终的访问接口是：协议（http 或 https）+ 主机地址 + 接口。<br>
+&emsp;&emsp;访问接口如下表所示，接口中中文部分表示需要提供的参数。开发者在部署服务后，最终的访问接口是：协议（http 或 https）+ 主机地址 + 接口。<br>
 <br>
 
 | 功能        | 接口          | 
@@ -58,13 +61,9 @@
     ]
 }
 </code></pre>
-## 3.3在线查询测试
-&emsp;&emsp;目前提供了一个在线查询测试（后期服务不一定能访问）：
->1. 按经纬度查询：
->2. 按中文查询：
->3. 按拼音查询：
+
 # 4基于该服务的小程序
-&emsp;&emsp;基于该服务可以构建一些天气查询应用。下面几幅图就是小程序项目（weather-weixin）的演示效果图。由于证书没整好，目前该小程序只能在iPhone上运行。<br>
+&emsp;&emsp;基于该服务可以构建一些天气查询应用。为了演示该服务，写了一个小程序。下面几幅图就是小程序项目（weather-weixin）的演示效果图。小程序启动时可以根据经纬度给出一个当前位置的天气情况，之后可以根据查询关键字更新数据。<br>
 <p align="center">
 <img src="https://github.com/mindawei/weather/blob/master/doc/imgs/1.png" width="33%" height="33%" />
 <img src="https://github.com/mindawei/weather/blob/master/doc/imgs/2.png" width="33%" height="33%" />
