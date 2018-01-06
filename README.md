@@ -1,5 +1,5 @@
 ### 前置说明
-1. /doc 文件夹中包含项目截图和以下将要描述的文档。
+1. /doc 文件夹中包含项目截图和以下将要描述的文档(<a href="https://github.com/mindawei/weather/blob/master/doc/%E5%A4%A9%E6%B0%94%E6%9C%8D%E5%8A%A1%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3.pdf">PDF文档</a> )。
 2. weather-web 项目： 天气Web服务。 
 3. weather-weixin 项目：查询天气微信小程序（微信扫描下图可以查看）。
 
@@ -70,3 +70,11 @@
 <img src="https://github.com/mindawei/weather/blob/master/doc/imgs/2.png" width="33%" height="33%" />
 <img src="https://github.com/mindawei/weather/blob/master/doc/imgs/3.png" width="33%" height="33%" />
 </p>
+
+# 5项目实际部署
+## 5.1运行Web服务
+1. 如果要支持经纬度查询，则需要配置WeatherWebConfig.txt中的腾讯地图API KEY。
+2. 由于小程序使用https，所以如果要运行小程序，则需要将域名指向Web服务主机，申请证书，并配置src/main/resources下的application.properties文件。
+## 5.2运行小程序
+1. project.config.json中填入你申请的appid。
+2. pages\index\index.js内容中开头部分的baseUrl替换成：Web服务地址的部署地址+”weather/”。
