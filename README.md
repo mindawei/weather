@@ -62,7 +62,7 @@
 >2. 按中文查询：
 >3. 按拼音查询：
 # 4基于该服务的小程序
-&emsp;&emsp;基于该服务可以构建一些天气查询应用。下面几幅图就是小程序项目（weather-weixin）的演示效果图。（由于证书没整好，目前该小程序只能在iPhone上运行）。<br>
+&emsp;&emsp;基于该服务可以构建一些天气查询应用。下面几幅图就是小程序项目（weather-weixin）的演示效果图。由于证书没整好，目前该小程序只能在iPhone上运行。<br>
 <p align="center">
 <img src="https://github.com/mindawei/weather/blob/master/doc/imgs/1.png" width="33%" height="33%" />
 <img src="https://github.com/mindawei/weather/blob/master/doc/imgs/2.png" width="33%" height="33%" />
