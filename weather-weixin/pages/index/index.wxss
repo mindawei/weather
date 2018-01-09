@@ -1,1 +1,12 @@
 /**index.wxss**/
+@import "/wxSearch/wxSearch.wxss";
+
+/*分享按钮*/
+.share-img {
+  border: 0px;
+  height: 48px;
+  width: 48px;
+  right: 10px;
+  bottom: 40px;
+  position: fixed;
+}

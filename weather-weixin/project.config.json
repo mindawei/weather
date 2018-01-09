@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.7.2",
-	"appid": "此处填入你申请的AppID",
+	"appid": "填入你申请的appid",
 	"projectname": "weather-weixin",
 	"condition": {
 		"search": {
