@@ -82,11 +82,9 @@ public class WeatherSpider {
 			String currentDate = currentDate();
 			// 如果时间没有过期则返回
 			if(pre!=null&&pre.getDate().equals(currentDate)){
-				// System.out.println("缓存");
 				return pre;
 			}
-			// System.out.println("没有命中");
-			
+			LOGGER.info("缓存没有命中");
 			
 			String url = String.format("http://www.tianqi.com/%s/30/", city);
 
@@ -145,6 +143,13 @@ public class WeatherSpider {
 			}
 			
 			
+			// 数据不一致
+			String fisrtDate = weatherItems.get(0).getDate();
+			if(!currentDate.endsWith(fisrtDate)) {
+				currentDate = currentDate.split(" ")[0] + " "+ fisrtDate;
+				LOGGER.info("日期不一致");
+			}
+			
 			WeatherData weatherData = new WeatherData(pingyin2CityName.get(city), currentDate,weatherItems);
 			cache.put(city,weatherData);
 			return weatherData;
@@ -157,9 +162,9 @@ public class WeatherSpider {
 
 	
 	/***
-	 * 获得当前时间 "2015-05-26"
+	 * 获得当前时间 "2015年 05月26日"
 	 */
     private static String currentDate(){
-        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        return new SimpleDateFormat("yyyy MM月dd日").format(new Date());
     }
 }
