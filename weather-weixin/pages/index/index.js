@@ -1,8 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp();
-const baseUrl = "Web服务地址的部署地址/weather/";
-var WxSearch = require('../../wxSearch/wxSearch.js');
+const baseUrl = "你服务部署的网址/weather/";
+var WxSearch = require('../../wxSearchView/wxSearchView.js');
 
 Page({
   data: {
@@ -11,6 +11,7 @@ Page({
     baseImgPath:"../images/",
     haveWeatherItems:true,
     tmpweatherItems: null,
+    isFormSearch : false,
     weatherData: { "queryName": "", "date": "", "weatherItems": [] }
   },
 
@@ -29,6 +30,10 @@ Page({
   },
 
   onShow: function () {
+    if (this.isFormSearch){
+      this.isFormSearch = false;
+      return;
+    }
     var that = this;
     wx.getLocation({
       type: 'wgs84',
@@ -47,62 +52,29 @@ Page({
     })
   },
 
-   // 搜索栏
-  onLoad: function () {
-    console.log('onLoad');
-    var that = this;
-      //初始化的时候渲染wxSearchdata
-    WxSearch.init(that, 43, ['杭州', '嘉兴', "海宁", "桐乡", '宁波', '金华', "绍兴", '上海', '苏州', '无锡', '常州', "南京", "济南", "长沙","北京","广州",'厦门',"香港","澳门","深圳"]
-    ,true,false);
-    // 搜索提示
-    // WxSearch.initMindKeys([]);
-  }, 
-  wxSearchFn: function (e) {
-    // var that = this
-    // WxSearch.wxSearchAddHisKey(that);
-  },
-  wxSearchInput: function (e) {
-      WxSearch.wxSearchInput(e, this);
-   },
-  wxSerchFocus: function (e) {
-      WxSearch.wxSearchFocus(e, this);
-  },
-  wxSearchBlur: function (e) {
-    var that = this;
-    WxSearch.wxSearchBlur(e, that,function(key){
-      // console.log("失去焦点:"+key);
-      that.search(key);
-    });
-  },
-  wxSearchKeyTap: function (e) {
-    var that = this
-    WxSearch.wxSearchKeyTap(e, that, function (key){
-      //点击热门城市
-     // console.log("点击热门城市:" + key);
-     that.search(key);
-    });
-  },
-  wxSearchDeleteKey: function (e) {
-      WxSearch.wxSearchDeleteKey(e, this);
-  },
-  wxSearchDeleteAll: function (e) {
-    WxSearch.wxSearchDeleteAll(this);
-  },
-  wxSearchTap: function (e) {
-      WxSearch.wxSearchHiddenPancel(this);
+  // 搜索页面跳回
+  onLoad: function (options) {
+    if (options && options.searchValue) {
+      var value = options.searchValue;
+      if (value.length == 0) {
+        return;
+      }
+      this.isFormSearch = true;
+      wx.request({
+        url: baseUrl + value,
+        success: (res) => {
+          this.setData({
+            weatherData: res.data
+          });
+        },
+      })
+    }
   },
 
-  search : function(cityName){
-    if (cityName.length==0){
-     return;
-    }
-    wx.request({
-      url: baseUrl + cityName,
-      success: (res) => {
-        this.setData({
-          weatherData: res.data
-        });
-      },
+  // 搜索入口  
+  wxSearchTab: function () {
+    wx.redirectTo({
+      url: '../search/search'
     })
   }
 

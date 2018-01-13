@@ -1,22 +1,14 @@
+<!--index.wxml-->
 
-
-<import src="../../wxSearch/wxSearch.wxml"  />
 <view class="weui-search-bar">
-    <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-            <input type="text" class="weui-search-bar__input" placeholder="请输入查询城市名称" value="{{wxSearchData.value}}"
-                   bindfocus="wxSerchFocus" bindinput="wxSearchInput" bindblur='wxSearchBlur'  />
-            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="bindblur">
-                <icon type="clear" size="14"></icon>
-            </view>
-        </view>
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" disabled='true' placeholder="搜索城市天气" bindtap="wxSearchTab"/>
     </view>
+  </view>
 </view>
 
-<template is="wxSearch" data="{{wxSearchData}}"   />
-
-<!--index.wxml-->
 <view>
 
   <view class="weui-cells__title">{{weatherData.queryName}}30天天气</view>
