@@ -41,7 +41,14 @@
 | ------------- |:-------------:| 
 | 按经纬度进行查询      | /weather/?latitude=纬度&longitude=经度 |
 | 按城市名称中文（或拼音）进行查询      | /weather/城市名称或拼音 |
-	
+
+__开放测试接口__：https://weather.mindawei.cn/weather/
+
+以杭州为例：
+* https://weather.mindawei.cn/weather/hangzhou
+* https://weather.mindawei.cn/weather/杭州
+* https://weather.mindawei.cn/weather/?latitude=30.27415&longitude=120.15515
+
 ## 3.2返回结果
 &emsp;&emsp;返回的结果是Json格式，包含30天天气基本情况，具体如下所示：
 <pre><code>
